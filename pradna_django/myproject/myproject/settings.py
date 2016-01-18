@@ -32,12 +32,12 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = (
+    'myproject',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'myproject',
     #fix for bug1
     'django.contrib.staticfiles',
 )
@@ -58,6 +58,7 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.security.SecurityMiddleware',
 )
 
+
 #STATIC_ROOT = os.path.join(BASE_DIR,'static')
 
 #fix for bug1
@@ -65,6 +66,10 @@ STATICFILES_DIRS = (
 
     os.path.join(BASE_DIR,'static'),
 )
+
+STATIC_ROOT = '/static/'
+
+
 
 ROOT_URLCONF = 'myproject.urls'
 
@@ -103,7 +108,7 @@ def database_setting(enviroment):
         }
     return connect_options
 
-#при установке на продуктив нужно менять на "production"
+#РїСЂРё СѓСЃС‚Р°РЅРѕРІРєРµ РЅР° РїСЂРѕРґСѓРєС‚РёРІ РЅСѓР¶РЅРѕ РјРµРЅСЏС‚СЊ РЅР° "production"
 DATABASES = database_setting("test")
 
 

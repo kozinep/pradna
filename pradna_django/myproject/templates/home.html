@@ -50,9 +50,12 @@
 						<b>Добро пожаловать в фитнес-клуб PRADNA!</b>
 						<p>Клуб PRADNA работает для того, чтобы вы могли добиваться совершенства. Мы отчетливо понимаем, что фитнес — не роскошь, а необходимость для всех, кто ценит свое здоровье, и делаем все, чтобы вы тренировались в комфортной обстановке.</p><p>					</p></div><div class="news">
 		<div class="new" id="bx_3218110189_193">
-									<span>Новость 21.12.2015</span><br>
-										<a class="title" href="/press-tsentr/novosti/2015/novaya-novost/">Новая новость</a>
-			</div>
+			{% for news in template_all_entries %}
+										<span>Новость {{news.news_date}}</span><br>
+										<a class="title" href="/press-tsentr/novosti/2015/novaya-novost/">{{news.news_text}}</a>
+			{% endfor %}
+
+		</div>
 </div>
 <div class="offers">
 	<h3>Специальные предложения от нашего клуба!</h3>
