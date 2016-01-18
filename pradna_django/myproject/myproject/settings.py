@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 """
 Django settings for myproject project.
 
@@ -36,8 +37,14 @@ INSTALLED_APPS = (
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
     'myproject',
+    #fix for bug1
+    'django.contrib.staticfiles',
+)
+#fix for bug1
+STATICFILES_FINDERS =(
+    "django.contrib.staticfiles.finders.AppDirectoriesFinder",
+    "django.contrib.staticfiles.finders.FileSystemFinder",
 )
 
 MIDDLEWARE_CLASSES = (
@@ -51,7 +58,14 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.security.SecurityMiddleware',
 )
 
-STATIC_ROOT = '/static/'
+#STATIC_ROOT = os.path.join(BASE_DIR,'static')
+
+#fix for bug1
+STATICFILES_DIRS = (
+
+    os.path.join(BASE_DIR,'static'),
+)
+
 ROOT_URLCONF = 'myproject.urls'
 
 TEMPLATES = [
@@ -61,11 +75,11 @@ TEMPLATES = [
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
-		'django.template.context_processors.debug',
+		        'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                #add to serve static in dev
+                #fix for bug1
                 'django.core.context_processors.static'
             ],
         },
@@ -79,20 +93,19 @@ FILE_CHARSET = 'utf-8'
 # Database
 # https://docs.djangoproject.com/en/1.8/ref/settings/#databases
 
-DATABASES = {
-#    'default': {
-#    	'ENGINE': 'django.db.backends.mysql',
-#	'NAME': 'blogdb',
-#	'USER': 'blogdb',
-#	'PASSWORD': 'Citibank09',
-#	'HOST': '127.0.0.1',
-#	'PORT': '3306',
-#     }
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR,'sqlite.db'),
-    }
-}
+def database_setting(enviroment):
+    if enviroment=="production":
+        connect_options = {
+            'default': {'ENGINE': 'django.db.backends.mysql','NAME': 'blogdb','USER': 'blogdb','PASSWORD': 'Citibank09','HOST': '127.0.0.1','PORT': '3306',}}
+    else:
+        connect_options = {
+            'default': {'ENGINE': 'django.db.backends.sqlite3','NAME': os.path.join(BASE_DIR,'sqlite.db'),}
+        }
+    return connect_options
+
+#при установке на продуктив нужно менять на "production"
+DATABASES = database_setting("test")
+
 
 
 # Internationalization
