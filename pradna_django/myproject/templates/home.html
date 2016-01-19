@@ -13,98 +13,89 @@
 	<link href="/static/css/slick.css" type="text/css" data-template-style="true" rel="stylesheet">
 </head>
 <body class="index">
-	<div id="panel"></div>
-	<div class="wrapper">
-		<div class="header">
+<div id="panel"></div>
+<div class="wrapper">
+    <div class="header">
 	<div class="contacts">
-		<p class="tel">Телефон: <a href="tel:+74997251617">8 (499) 725-16-17</a></p>
-				<p>Время работы: Пн-Пт: 8:00-23:00, Сб,Вс: 09:00-22:00</p>
-				<p>Адрес: г. Москва, м. Коломенская, ул. Судостроительная, д. 41</p>	</div>
-	<a href="/" class="logo"></a>
-	<a href="/karty/" class="order"><span>Заказать</span> клубную карту</a>
-	<div class="age">6+</div>
-	
-<div class="nav">
-	<ul>
-
-			<li><a href="/fitnes/">Фитнес</a></li>
-				
-			<li><a href="/spa/">SPA</a></li>
-		<li class="del">|</li>		
-			<li><a href="/o-klube/">О клубе</a></li>
-				
-			<li><a href="/press-tsentr/">Пресс-центр</a></li>
-				
-			<li><a href="/vakansii/">Вакансии</a></li>
-				
-			<li><a href="/kontakty/">Контакты</a></li>
-				
-
-	</ul>
-</div>
-	
-</div>		<div class="content">
-			<div class="cols">
-				<div class="col col2">
+		<p class="tel">Телефон:
+            <a href="tel:+74997251617">8 (499) 725-16-17</a>
+        </p>
+        <p>Время работы: Пн-Пт: 8:00-23:00, Сб,Вс: 09:00-22:00</p>
+        <p>Адрес: г. Москва, м. Коломенская, ул. Судостроительная, д. 41</p>
+    </div>
+        <a href="/" class="logo"></a>
+        <a href="/karty/" class="order"><span>Заказать</span> клубную карту</a>
+        <div class="age">6+</div>
+        <div class="nav">
+            <ul>
+                <li><a href="/fitnes/">Фитнес</a></li>
+                <li><a href="/spa/">SPA</a></li>
+                <li class="del">|</li>
+                <li><a href="/o-klube/">О клубе</a></li>
+                <li><a href="/press-tsentr/">Пресс-центр</a></li>
+                <li><a href="/vakansii/">Вакансии</a></li>
+                <li><a href="/kontakty/">Контакты</a></li>
+			</ul>
+        </div>
+    </div>
+    <div class="content">
+        <div class="cols">
+            <div class="col col2">
 					<div class="welcome">
 						<b>Добро пожаловать в фитнес-клуб PRADNA!</b>
-						<p>Клуб PRADNA работает для того, чтобы вы могли добиваться совершенства. Мы отчетливо понимаем, что фитнес — не роскошь, а необходимость для всех, кто ценит свое здоровье, и делаем все, чтобы вы тренировались в комфортной обстановке.</p><p>					</p></div><div class="news">
-		<div class="new" id="bx_3218110189_193">
-			{% for news in template_all_entries %}
-										<span>Новость {{news.news_date}}</span><br>
-										<a class="title" href="/press-tsentr/novosti/2015/novaya-novost/">{{news.news_text}}</a>
-			{% endfor %}
+						<p>Клуб PRADNA работает для того, чтобы вы могли добиваться совершенства. Мы отчетливо понимаем, что фитнес — не роскошь, а необходимость для всех, кто ценит свое здоровье, и делаем все, чтобы вы тренировались в комфортной обстановке.</p><p>
+                    </p>
+                    </div>
+                {% for news in template_all_entries %}
+                <div class="news">
+                    <div class="new" id="bx_3218110189_193">
+                        <span>Новость {{news.news_date}}</span><br>
+                        <a class="title" href="/press-tsentr/novosti/2015/novaya-novost/">{{news.news_text}}</a>
 
-		</div>
-</div>
-<div class="offers">
-	<h3>Специальные предложения от нашего клуба!</h3>
-					<div class="offer star" id="bx_651765591_95">
-													<a class="more" href="/press-tsentr/aktsii/2015/podberi-klubnuyu-kartu/">Подробнее</a>
-					</div>
-		<div class="offer power">
-		<h6>Оформить заявку</h6>
-		<p class="big">на бесплатный гостевой визит</p>
-		<a href="/karty/" class="more">Подробнее</a>
-	</div>
-</div>
-<br>			
+                    </div>
+                </div>
+                {% endfor %}
+                <div class="offers">
+                    <h3>Специальные предложения от нашего клуба!</h3>
+                    <div class="offer star" id="bx_651765591_95">
+                        <a class="more" href="/press-tsentr/aktsii/2015/podberi-klubnuyu-kartu/">Подробнее</a>
+                    </div>
+                    <div class="offer power">
+                        <h6>Оформить заявку</h6>
+                        <p class="big">на бесплатный гостевой визит</p>
+                        <a href="/karty/" class="more">Подробнее</a>
+                    </div>
+                </div>
+                <br>
+            </div>
+            <div class="col col2">
+                <div id="bx_1373509569_91">
+                    <a href="http://new.pradna.info/o-klube/nasha-komanda/35/">
+                        <img src="/upload/iblock/6d5/6d5018a55617574ab5beb4654dbf0782.jpg" width="480" height="520" alt="Фото 1" title="Фото 1">
+                    </a>
 				</div>
-				<div class="col col2">
-							<div id="bx_1373509569_91">
-					<a href="http://new.pradna.info/o-klube/nasha-komanda/35/">
-		<img src="/upload/iblock/6d5/6d5018a55617574ab5beb4654dbf0782.jpg" width="480" height="520" alt="Фото 1" title="Фото 1">
-		</a>
-				</div>
-				</div>
-			</div>
-		</div>
-		<div class="footer">
-	
-<div class="nav">
-	<ul>
-
-			<li><a href="/fitnes/">Фитнес</a></li>
-		
-			<li><a href="/spa/">SPA</a></li>
-		
-			<li><a href="/o-klube/">О клубе</a></li>
-		
-			<li><a href="/press-tsentr/">Пресс-центр</a></li>
-		
-			<li><a href="/vakansii/">Вакансии</a></li>
-		
-			<li><a href="/kontakty/">Контакты</a></li>
-		
-
-	</ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="nav">
+            <ul>
+                <li><a href="/fitnes/">Фитнес</a></li>
+                <li><a href="/spa/">SPA</a></li>
+                <li><a href="/o-klube/">О клубе</a></li>
+                <li><a href="/press-tsentr/">Пресс-центр</a></li>
+                <li><a href="/vakansii/">Вакансии</a></li>
+                <li><a href="/kontakty/">Контакты</a></li>
+            </ul>
+        </div>
+        <a href="/" class="logo"></a>
+        <div class="copy">
+            <p>© Pradna 2015. Все права защищены.</p>
+            <p>Материалы данного сайта - собственность правообладателей.</p>	</div>
+        <div class="dev">
+            <a href="#">Разработка и дизайн</a>
+        </div>
+    </div>
 </div>
-	<a href="/" class="logo"></a>
-	<div class="copy">
-		<p>© Pradna 2015. Все права защищены.</p>
-				<p>Материалы данного сайта - собственность правообладателей.</p>	</div>
-	<div class="dev">
-		<a href="#">Разработка и дизайн</a>	</div>
-</div>	</div>
-
-</body></html>
+</body>
+</html>
