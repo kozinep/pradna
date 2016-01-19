@@ -74,50 +74,15 @@
             <div class="col col2" style="background-color:white">
                 <div id="carouse-wrap" style="margin-top: 100px; margin-left: 130px;">
                         <ul id="carousel" class="top_slider roundabout-holder">
+                            {% for e in carousel_entries%}
                             <li>
                                 <span>
                                     <a class="view-project-button" href="#">Подробнее</a>
                                 </span>
-                                <img src="http://teslathemes.com/wp-content/uploads/2014/06/Zero-WP-slider.png" alt="" class="slide" />
+                                <img src={{e.carousel_image}} alt="" class="slide" />
                             </li>
-                            <li>
-                                <span>
-                                    <a class="view-project-button" href="#">Подробнее</a>
-                                </span>
-                                <img src="http://teslathemes.com/wp-content/uploads/2014/06/Zero-WP-slider.png" alt="" class="slide" />
-                            </li>
+                            {% endfor %}
 
-                            <li>
-                                <span>
-                                    <a class="view-project-button" href="#">Подробнее</a>
-                                </span>
-                                <img src="http://teslathemes.com/wp-content/uploads/2014/06/Sevenfold-WP-slider.png" alt="" class="slide" />
-                            </li>
-
-                            <li>
-                                <span>
-                                    <a class="view-project-button" href="#">Подробнее</a>
-                                </span>
-                                <img src="http://teslathemes.com/wp-content/uploads/2014/06/Sevenfold-WP-slider.png" alt="" class="slide" />
-                            </li>
-                            <li>
-                                <span>
-                                    <a class="view-project-button" href="#">Подробнее</a>
-                                </span>
-                                <img src="http://teslathemes.com/wp-content/uploads/2014/06/Sevenfold-WP-slider.png" alt="" class="slide" />
-                            </li>
-                             <li>
-                                <span>
-                                    <a class="view-project-button" href="#">Подробнее</a>
-                                </span>
-                                <img src="http://teslathemes.com/wp-content/uploads/2014/06/Sevenfold-WP-slider.png" alt="" class="slide" />
-                            </li>
-                             <li>
-                                <span>
-                                    <a class="view-project-button" href="#">Подробнее</a>
-                                </span>
-                                <img src="http://teslathemes.com/wp-content/uploads/2014/06/Sevenfold-WP-slider.png" alt="" class="slide" />
-                            </li>
 
                         </ul>
                     </div>
