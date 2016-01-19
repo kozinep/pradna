@@ -20,6 +20,7 @@ from myproject import views,settings
 
 urlpatterns = [
     	url(r'^admin/', include(admin.site.urls)),
+        url(r'^carousel/$',views.Carousel),
 	    url(r'^$',views.Home),
 ]+ static(settings.STATIC_URL)
 

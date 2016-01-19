@@ -11,3 +11,6 @@ def Home (request):
 #database queryset
 	all_entries = news_Main.objects.all()
 	return render_to_response('home.html',context={'template_all_entries': all_entries})
+
+def Carousel(request):
+    return  render_to_response('mainpage_carousel.html')
