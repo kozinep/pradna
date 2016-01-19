@@ -1,9 +1,10 @@
 body{background:#fff; color:#eee;}
 		.roundabout-holder {
+
 			padding: 0;
 			margin: 0 auto;
 			height: 400px;
-			width: 620px;
+			width: 420px;
 		}
 		
 		.roundabout-moveable-item {
@@ -27,8 +28,8 @@ body{background:#fff; color:#eee;}
 
 
 #carousel li {
-height: 580px;
-width: 408px;
+height: 480px;
+width: 308px;
 box-shadow: 0 0 10px #000;
 text-align: center;
 cursor: pointer;
@@ -63,7 +64,7 @@ display: none;
 position: absolute;
 width: 260px;
 border-radius: 5px;
-margin: 270px 88px;
+margin: 88px 88px;
 overflow: hidden;
 box-shadow: 0 0 8px #000;
 }
