@@ -101,7 +101,7 @@ FILE_CHARSET = 'utf-8'
 def database_setting(enviroment):
     if enviroment=="production":
         connect_options = {
-            'default': {'ENGINE': 'django.db.backends.mysql','NAME': 'blogdb','USER': 'blogdb','PASSWORD': 'Citibank09','HOST': '127.0.0.1','PORT': '3306',}}
+            'default': {'ENGINE': 'django.db.backends.mysql','NAME': 'blogdb','USER': '*****','PASSWORD': '*******','HOST': '127.0.0.1','PORT': '3306',}}
     else:
         connect_options = {
             'default': {'ENGINE': 'django.db.backends.sqlite3','NAME': os.path.join(BASE_DIR,'sqlite.db'),}
