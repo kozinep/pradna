@@ -1,0 +1,121 @@
+﻿{% extends "section/mainSection/BASE_main.html" %}
+{% block title%}
+<meta title="Pradna">
+{% endblock title %}
+{%block css %}
+<link href="/static/css/base.css" type="text/css" data-template-style="true" rel="stylesheet">
+<link href="/static/css/common.css" type="text/css" data-template-style="true" rel="stylesheet">
+<link href="/static/css/media.css" type="text/css" data-template-style="true" rel="stylesheet">
+<link href="/static/css/slick.css" type="text/css" data-template-style="true" rel="stylesheet">
+<link href="/static/css/bootstrap.css" type="text/css" data-template-style="true" rel="stylesheet">
+<link href="/static/css/roundabout_carousel/theme.css" type="text/css" data-template-style="true" rel="stylesheet">
+{%endblock css%}
+
+{%block body %}
+<body class="index">
+
+
+
+<div id="panel"></div>
+<div class="wrapper">
+    <div class="header">
+        <div class="contacts">
+            <p class="tel">Телефон:
+                <a href="tel:+74997251617">8 (499) 725-16-17</a>
+            </p>
+            <p>Время работы: Пн-Пт: 8:00-23:00, Сб,Вс: 09:00-22:00</p>
+            <p>Адрес: г. Москва, м. Коломенская, ул. Судостроительная, д. 41</p>
+        </div>
+            <h1 class="logo"><a href="/" class="logo"></a></h1>
+            <a href="/karty/" class="order"><span>Заказать</span> клубную карту</a>
+            <div class="age">6+</div>
+            <div class="nav customnav">
+                <ul>
+                    <li><a href="/fitnes/">Фитнес</a></li>
+                    <li><a href="/spa/">SPA</a></li>
+                    <li class="del">|</li>
+                    <li><a href="/o-klube/">О клубе</a></li>
+                    <li><a href="/press-tsentr/">Пресс-центр</a></li>
+                    <li><a href="/vakansii/">Вакансии</a></li>
+                    <li><a href="/kontakty/">Контакты</a></li>
+                </ul>
+            </div>
+    </div>
+</div>
+{%include "snippets/main_banner.html"%}
+<div class="wrapper">
+    <div class="content">
+        <div class="cols">
+            <div class="col col2">
+					<div class="welcome">
+						<b>Добро пожаловать в фитнес-клуб PRADNA!</b>
+						<p>Привет! Это новый портал домашнего фитнес-клуба ПРАДНА. На сайте вы найдете всю интересующую вас информацию. Желаем успеха и хорошего настроения!</p>
+
+                    </div>
+                {% for news in template_all_entries %}
+                <div class="news">
+                    <div class="new" id="bx_3218110189_193">
+                        <span>Новость {{news.news_date}}</span><br>
+                        <a class="title" href="/press-tsentr/novosti/2015/novaya-novost/">{{news.news_text}}</a>
+
+                    </div>
+                </div>
+                {% endfor %}
+                <div class="offers">
+                    <h3>Специальные предложения от нашего клуба!</h3>
+                    <div class="offer star" id="bx_651765591_95">
+                        <a class="more" href="/press-tsentr/aktsii/2015/podberi-klubnuyu-kartu/">Хочу узнать!</a>
+                    </div>
+                    <div class="offer power">
+                        <h6>Оформить заявку</h6>
+                        <p class="big">на бесплатный гостевой визит</p>
+                        <a href="/karty/" class="more">Гостевой визит</a>
+                    </div>
+                </div>
+                <br>
+            </div>
+            <div class="col col2" style="background-color:white">
+                <div id="carouse-wrap" style="margin-top: 100px; margin-left: 130px;">
+                        <ul id="carousel" class="top_slider roundabout-holder">
+                            {% for e in carousel_entries%}
+                            <li>
+                                <span>
+                                    <a class="view-project-button" href="#">Подробнее</a>
+                                </span>
+                                <img src={{e.carousel_image}} alt="" class="slide" />
+                            </li>
+                            {% endfor %}
+
+
+                        </ul>
+                    </div>
+                    <!--<a href="http://new.pradna.info/o-klube/nasha-komanda/35/">-->
+                        <!--<img src="/upload/iblock/6d5/6d5018a55617574ab5beb4654dbf0782.jpg" width="480" height="520" alt="Фото 1" title="Фото 1">-->
+
+                    <!--</a>-->
+				</div>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="nav">
+            <ul>
+                <li><a href="/fitnes/">Фитнес</a></li>
+                <li><a href="/spa/">SPA</a></li>
+                <li><a href="/o-klube/">О клубе</a></li>
+                <li><a href="/press-tsentr/">Пресс-центр</a></li>
+                <li><a href="/vakansii/">Вакансии</a></li>
+                <li><a href="/kontakty/">Контакты</a></li>
+            </ul>
+        </div>
+        <a href="/" class="logo"></a>
+        <div class="copy">
+            <p>© Pradna 2015. Все права защищены.</p>
+            <p>Материалы данного сайта - собственность правообладателей.</p>	</div>
+        <div class="dev">
+            <a href="#">Разработка и дизайн</a>
+        </div>
+    </div>
+</div>
+<script src="/static/js/roundabout_carousel/carousel.js"></script>
+</body>
+{%endblock body%}
